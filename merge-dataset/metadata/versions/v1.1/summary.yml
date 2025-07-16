@@ -1,0 +1,43 @@
+audio_balanced: !!python/object/apply:numpy._core.multiarray.scalar
+- &id001 !!python/object/apply:numpy.dtype
+  args:
+  - i8
+  - false
+  - true
+  state: !!python/tuple
+  - 3
+  - <
+  - null
+  - null
+  - null
+  - -1
+  - -1
+  - 0
+- !!binary |
+  oAwAAAAAAAA=
+audio_complete: !!python/object/apply:numpy._core.multiarray.scalar
+- *id001
+- !!binary |
+  4g0AAAAAAAA=
+bimodal_balanced: !!python/object/apply:numpy._core.multiarray.scalar
+- *id001
+- !!binary |
+  0AcAAAAAAAA=
+bimodal_complete: !!python/object/apply:numpy._core.multiarray.scalar
+- *id001
+- !!binary |
+  qAgAAAAAAAA=
+by_quadrant:
+  Q1: 1512
+  Q2: 1662
+  Q3: 1459
+  Q4: 1622
+lyrics_balanced: !!python/object/apply:numpy._core.multiarray.scalar
+- *id001
+- !!binary |
+  YAkAAAAAAAA=
+lyrics_complete: !!python/object/apply:numpy._core.multiarray.scalar
+- *id001
+- !!binary |
+  CAoAAAAAAAA=
+total_songs: 6255

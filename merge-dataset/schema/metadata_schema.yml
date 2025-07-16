@@ -1,0 +1,189 @@
+---
+# MERGE Dataset Metadata Schema
+# Version: 1.1.0
+# Description: Unified schema for the MERGE dataset metadata
+
+song_id:
+  type: string
+  description: "Unique identifier for each song (e.g., A001, A002)"
+  required: true
+  primary_key: true
+
+quadrant:
+  type: string
+  description: "Emotion quadrant (Q1: High Arousal/High Valence, Q2: High Arousal/Low Valence, Q3: Low Arousal/Low Valence, Q4: Low Arousal/High Valence)"
+  required: true
+  allowed_values: ["Q1", "Q2", "Q3", "Q4"]
+
+allmusic_id:
+  type: string
+  description: "AllMusic database identifier"
+  required: false
+
+allmusic_extraction_date:
+  type: string
+  description: "Date when metadata was extracted from AllMusic"
+  required: false
+
+artist:
+  type: string
+  description: "Primary artist name"
+  required: true
+
+title:
+  type: string
+  description: "Song title"
+  required: true
+
+relevance:
+  type: float
+  description: "Relevance score from AllMusic"
+  required: false
+
+year:
+  type: string
+  description: "Original release year information"
+  required: false
+
+lowest_year:
+  type: integer
+  description: "Earliest known release year"
+  required: false
+
+duration:
+  type: float
+  description: "Song duration in seconds"
+  required: false
+
+moods:
+  type: string
+  description: "Primary moods associated with the song"
+  required: false
+
+moods_all:
+  type: string
+  description: "All moods associated with the song (comma-separated)"
+  required: false
+
+moods_all_weights:
+  type: string
+  description: "Weights for all moods (comma-separated)"
+  required: false
+
+genres:
+  type: string
+  description: "Musical genres (comma-separated)"
+  required: false
+
+genre_weights:
+  type: string
+  description: "Weights for genres (comma-separated)"
+  required: false
+
+themes:
+  type: string
+  description: "Song themes (comma-separated)"
+  required: false
+
+theme_weights:
+  type: string
+  description: "Weights for themes (comma-separated)"
+  required: false
+
+styles:
+  type: string
+  description: "Musical styles (comma-separated)"
+  required: false
+
+style_weights:
+  type: string
+  description: "Weights for styles (comma-separated)"
+  required: false
+
+appearances_track_ids:
+  type: string
+  description: "AllMusic track IDs where song appears"
+  required: false
+
+appearances_album_ids:
+  type: string
+  description: "AllMusic album IDs where song appears"
+  required: false
+
+sample:
+  type: float
+  description: "Sample identifier"
+  required: false
+
+sample_url:
+  type: string
+  description: "URL to audio sample"
+  required: false
+
+actual_year:
+  type: integer
+  description: "Verified release year"
+  required: false
+
+num_genres:
+  type: integer
+  description: "Number of genres associated with the song"
+  required: false
+
+num_moods_all:
+  type: integer
+  description: "Number of moods associated with the song"
+  required: false
+
+arousal:
+  type: float
+  description: "Arousal value (0-1 scale)"
+  required: false
+  range: [0.0, 1.0]
+
+valence:
+  type: float
+  description: "Valence value (0-1 scale)"
+  required: false
+  range: [0.0, 1.0]
+
+# File paths (computed fields)
+audio_path:
+  type: string
+  description: "Relative path to audio file"
+  required: false
+
+lyrics_path:
+  type: string
+  description: "Relative path to lyrics file"
+  required: false
+
+# Dataset organization fields
+subset:
+  type: string
+  description: "Dataset subset (audio, lyrics, bimodal)"
+  required: true
+  allowed_values: ["audio", "lyrics", "bimodal"]
+
+balanced:
+  type: boolean
+  description: "Whether this sample is part of the balanced subset"
+  required: true
+
+split_70_15_15:
+  type: string
+  description: "Train/validation/test split for 70-15-15 strategy"
+  required: false
+  allowed_values: ["train", "validate", "test"]
+
+split_40_30_30:
+  type: string
+  description: "Train/validation/test split for 40-30-30 strategy"
+  required: false
+  allowed_values: ["train", "validate", "test"]
+
+version:
+  type: string
+  description: "Dataset version"
+  required: true
+  default: "v1.1"
