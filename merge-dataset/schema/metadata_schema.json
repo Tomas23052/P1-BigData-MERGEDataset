@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "MERGE Dataset Metadata Schema",
+  "description": "JSON Schema for validating MERGE dataset metadata structure",
+  "type": "object",
+  "properties": {
+    "song_id": {
+      "type": "string",
+      "description": "Unique identifier for each song (e.g., A001, A002)",
+      "pattern": "^[A-Z]\\d{3,4}$"
+    },
+    "quadrant": {
+      "type": "string",
+      "description": "Emotion quadrant",
+      "enum": ["Q1", "Q2", "Q3", "Q4"]
+    },
+    "allmusic_id": {
+      "type": "string",
+      "description": "AllMusic database identifier"
+    },
+    "artist": {
+      "type": "string",
+      "description": "Artist name"
+    },
+    "title": {
+      "type": "string", 
+      "description": "Song title"
+    },
+    "year": {
+      "type": ["integer", "null"],
+      "description": "Release year",
+      "minimum": 1900,
+      "maximum": 2030
+    },
+    "duration": {
+      "type": ["number", "null"],
+      "description": "Duration in seconds",
+      "minimum": 0
+    },
+    "arousal": {
+      "type": "number",
+      "description": "Arousal value (0-1)",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "valence": {
+      "type": "number", 
+      "description": "Valence value (0-1)",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "available_audio_balanced": {
+      "type": "boolean",
+      "description": "Available in balanced audio subset"
+    },
+    "available_audio_complete": {
+      "type": "boolean",
+      "description": "Available in complete audio subset"
+    },
+    "available_lyrics_balanced": {
+      "type": "boolean",
+      "description": "Available in balanced lyrics subset"
+    },
+    "available_lyrics_complete": {
+      "type": "boolean", 
+      "description": "Available in complete lyrics subset"
+    },
+    "available_bimodal_balanced": {
+      "type": "boolean",
+      "description": "Available in balanced bimodal subset"
+    },
+    "available_bimodal_complete": {
+      "type": "boolean",
+      "description": "Available in complete bimodal subset"
+    },
+    "split_70_15_15_balanced_audio": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_70_15_15_complete_audio": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_70_15_15_balanced_lyrics": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_70_15_15_complete_lyrics": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_70_15_15_balanced_bimodal": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_70_15_15_complete_bimodal": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_40_30_30_balanced_audio": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_40_30_30_complete_audio": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_40_30_30_balanced_lyrics": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_40_30_30_complete_lyrics": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_40_30_30_balanced_bimodal": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "split_40_30_30_complete_bimodal": {
+      "type": ["string", "null"],
+      "enum": ["train", "validate", "test", null]
+    },
+    "version": {
+      "type": "string",
+      "description": "Dataset version",
+      "pattern": "^v\\d+\\.\\d+$"
+    }
+  },
+  "required": ["song_id", "quadrant", "version"],
+  "additionalProperties": true
+}

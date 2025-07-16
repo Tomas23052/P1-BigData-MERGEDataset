@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-07-16T22:33:36.248356",
+  "dataset_path": "/home/tom/p1_bigdata/merge-dataset",
+  "validation_summary": {
+    "overall_status": "PARTIAL",
+    "total_tests": 3,
+    "passed_tests": 2,
+    "failed_tests": 1
+  },
+  "schema_validation": {
+    "total_records": 6255,
+    "valid_records": 36,
+    "invalid_records": 11,
+    "validation_errors": [
+      {
+        "record_index": 1,
+        "song_id": "A002",
+        "error_message": "'1970-??-??' is not of type 'integer', 'null'",
+        "error_path": [
+          "year"
+        ]
+      },
+      {
+        "record_index": 8,
+        "song_id": "A014",
+        "error_message": "'20/06/2005' is not of type 'integer', 'null'",
+        "error_path": [
+          "year"
+        ]
+      },
+      {
+        "record_index": 38,
+        "song_id": "A061-66",
+        "error_message": "'A061-66' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 39,
+        "song_id": "A062-170",
+        "error_message": "'A062-170' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 40,
+        "song_id": "A063-90",
+        "error_message": "'A063-90' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 41,
+        "song_id": "A064-116",
+        "error_message": "'A064-116' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 42,
+        "song_id": "A066-140",
+        "error_message": "'A066-140' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 43,
+        "song_id": "A067-104",
+        "error_message": "'A067-104' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 44,
+        "song_id": "A068-167",
+        "error_message": "'2007-??-??' is not of type 'integer', 'null'",
+        "error_path": [
+          "year"
+        ]
+      },
+      {
+        "record_index": 45,
+        "song_id": "A071-70",
+        "error_message": "'A071-70' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      },
+      {
+        "record_index": 46,
+        "song_id": "A073-143",
+        "error_message": "'A073-143' does not match '^[A-Z]\\\\d{3,4}$'",
+        "error_path": [
+          "song_id"
+        ]
+      }
+    ],
+    "schema_compliance": false
+  },
+  "integrity_validation": {
+    "total_songs": 6255,
+    "unique_song_ids": 6255,
+    "duplicate_song_ids": [],
+    "missing_required_fields": [],
+    "invalid_quadrants": [],
+    "invalid_splits": [],
+    "availability_consistency": true,
+    "split_consistency": true
+  },
+  "file_validation": {
+    "total_audio_references": 0,
+    "missing_audio_files": [],
+    "total_lyrics_references": 0,
+    "missing_lyrics_files": [],
+    "file_integrity": true
+  }
+}

@@ -10,6 +10,9 @@
 MERGE-v*.zip
 MERGE_*.zip
 
+merge-dataset/presentation_files/*
+
+merge-dataset/apresentacao_files/*
 # Extracted dataset directories
 extracted/
 MERGE_*/
